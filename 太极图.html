@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: #333;
+            perspective: 800px;
+        }
+        .box {
+            position: relative;
+            margin: 100px auto;
+            width: 200px;
+            height: 400px;
+            background-color: #fff;
+            border-radius: 200px;
+            border-left:200px solid black;
+            animation:  run 1s linear infinite;
+        }
+        .box::before{
+           position: absolute;
+           left: -100px;
+           top: 0px;
+           content: "";
+           display: block;
+           width: 50px;
+           height: 53px;
+           border:75px solid black;
+           border-radius: 100px;
+           background-color:white;
+       }
+       .box::after{
+           position: absolute;
+           left: -100px;
+           bottom: 0px;
+           content: "";
+           display: block;
+           width: 50px;
+           height: 50px;
+           border:75px solid white ;
+           border-radius: 100px;
+           background-color: black;
+       }
+        .demo {
+            z-index: 1;
+            position: absolute;
+            left: 240px;
+            top: 90px;
+            transform-style: preserve-3d;
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            background-color: rgb(241, 251, 251);
+            animation:  sport 0.5s linear infinite ;
+        }
+        ul {
+            position: relative;
+            top: -20px;
+        }
+        li {
+            position: absolute;
+            left: 50%;
+            width: 10px;
+            height: 120px;
+            background: black;
+            list-style: none;
+        }
+        @keyframes sport {
+            0% {}
+            100% {
+                transform:  rotate(360deg);
+            }
+        }
+        @keyframes run {
+            0% {}
+            100% {
+                transform:  rotate(-360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="demo">
+        <ul>
+            <li style="background: rgb(27, 9, 109); "></li>
+            <li style="background: rgb(226, 27, 27); transform: rotate(36deg); transform-origin: bottom; "></li>
+            <li style="background: #175ee2; transform: rotate(72deg); transform-origin: bottom; "></li>
+            <li style="background: rgb(59, 224, 26); transform: rotate(108deg); transform-origin: bottom; "></li>
+            <li style="background: rgb(4, 54, 66); transform: rotate(-36deg); transform-origin: bottom; "></li>
+            <li style="background: rgb(13, 95, 55); transform: rotate(-72deg); transform-origin: bottom; "></li>
+            <li style="background: rgb(223, 132, 14); transform: rotate(-108deg); transform-origin: bottom; "></li>
+            <li style="background: rgb(100, 40, 40); transform: rotate(144deg); transform-origin: bottom; "></li>
+            <li style="background: rgb(82, 96, 136); transform: rotate(-144deg); transform-origin: bottom; "></li>
+            <li style="background: rgb(144, 25, 25); transform: rotate(180deg); transform-origin: bottom; "></li>
+        </ul>
+    </div>
+</body>
+</html>

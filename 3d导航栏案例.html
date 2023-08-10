@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 800px;
+        }
+        li {
+            float: left;
+            width: 150px;
+            height: 50px;
+            list-style: none;
+            perspective: 800px;
+            margin-left: 20px;
+        }
+        .box {
+            position: relative;
+            width: 150px;
+            height: 50px;
+            color: rgb(27, 3, 43);
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: all 1s;
+        }
+        .box1 {
+            position: relative;
+            width: 150px;
+            height: 50px;
+            color: rgb(27, 3, 43);
+            text-align: center;
+            transform-style: preserve-3d;
+            transition: all 1s;
+            animation: go 3s linear infinite;
+        }
+        .box1:hover {
+            animation-play-state: paused;
+        }
+        .box:hover {
+            transform:rotateX(90deg)
+        }
+        .front {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+            transform: translateZ(25px);
+            background-color: royalblue;
+        }
+        .bottom {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+            transform: translateY(25px) rotateX(-90deg);
+            background-color: gold;
+        }
+        .demo {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+            transform: translateZ(-25px) rotateX(180deg);
+            background-color: rgb(77, 72, 47);
+        }
+        .demo1 {
+            box-sizing: border-box;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding-top: 10px;
+            transform: translateY(-25px) rotateX(90deg);
+            background-color: rgb(235, 12, 12);
+        }
+        @keyframes go {
+            0% {}
+            100% {
+                transform:rotateX(360deg)
+            }
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <div class="box1">
+                <div class="front">2021</div>
+                <div class="bottom">2022</div>
+                <div class="demo">2023</div>
+                <div class="demo1">2024</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">2021</div>
+                <div class="bottom">2022</div>
+            </div>
+        </li>
+        <li>
+            <div class="box">
+                <div class="front">2021</div>
+                <div class="bottom">2022</div>
+            </div>
+        </li>
+    </ul>
+</body>
+</html>
